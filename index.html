@@ -70,22 +70,40 @@
           :class="scrolled ? 'glass-nav shadow-lg py-2' : 'bg-transparent py-4'">
     <div class="container mx-auto px-6 flex justify-between items-center">
       <a href="#inicio" class="flex items-center gap-4 group">
-        <div class="w-12 h-12 bg-gold-500/20 rounded-full flex items-center justify-center border border-gold-500/50">
-          <ion-icon name="shield-outline" class="text-2xl text-gold-500"></ion-icon>
+        <div class="w-14 h-14 rounded-full flex items-center justify-center">
+          <img src="images/logo transparente.png" alt="" srcset="" class=" rounded-full ">
         </div>
         <div>
           <h1 class="text-white font-serif font-bold text-xl leading-none tracking-wide">ESOFNARD</h1>
           <p class="text-gold-500 text-[10px] uppercase tracking-[0.2em] font-medium">Armada de República Dominicana</p>
         </div>
       </a>
+
       <nav class="hidden md:flex items-center gap-8">
         <a href="#inicio" class="text-white text-sm font-medium hover:text-gold-500 uppercase tracking-widest transition-colors">Inicio</a>
         <a href="#quienes-somos" class="text-white text-sm font-medium hover:text-gold-500 uppercase tracking-widest transition-colors">Nosotros</a>
         <a href="#suboficial" class="text-white text-sm font-medium hover:text-gold-500 uppercase tracking-widest transition-colors">El Suboficial</a>
         <a href="#requisitos" class="text-white text-sm font-medium hover:text-gold-500 uppercase tracking-widest transition-colors">Requisitos</a>
         <a href="#beneficios" class="text-white text-sm font-medium hover:text-gold-500 uppercase tracking-widest transition-colors">Beneficios</a>
+        <a href="articulos.html" class="text-white text-sm font-medium hover:text-gold-500 uppercase tracking-widest transition-colors">Noticias</a>
         <a href="#requisitos" class="px-6 py-2 bg-gradient-to-r from-gold-600 to-gold-400 text-navy-950 text-xs font-bold uppercase tracking-wider rounded-sm shadow-md hover:brightness-110 transition-all">Postúlate</a>
       </nav>
+
+      <button id="mobile-menu-button" class="md:hidden text-white text-3xl cursor-pointer hover:text-gold-500 transition-colors" aria-label="Abrir menú">
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-navy-950/95 backdrop-blur-xl z-50 hidden flex flex-col items-center justify-center space-y-8 transition-opacity duration-300">
+      <button id="close-menu" class="absolute top-8 right-8 text-white text-4xl hover:text-gold-500 transition-colors" aria-label="Cerrar menú">
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+      <a href="#inicio" class="text-2xl text-white font-serif hover:text-gold-500 transition-colors">Inicio</a>
+      <a href="#quienes-somos" class="text-2xl text-white font-serif hover:text-gold-500 transition-colors">Nosotros</a>
+      <a href="#suboficial" class="text-2xl text-white font-serif hover:text-gold-500 transition-colors">El Suboficial</a>
+      <a href="#requisitos" class="text-2xl text-white font-serif hover:text-gold-500 transition-colors">Requisitos</a>
+      <a href="#beneficios" class="text-2xl text-white font-serif hover:text-gold-500 transition-colors">Beneficios</a>
+      <a href="articulos.html" class="text-2xl text-gold-500 font-serif">Noticias</a>
     </div>
   </header>
 
@@ -407,6 +425,30 @@
       <p>&copy; 2026 Escuela de Suboficiales Navales (ESOFNARD) - ARD. Todos los derechos reservados.</p>
     </div>
   </footer>
+
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-button');
+    const closeBtn = document.getElementById('close-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    function toggleMenu() {
+      if (mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.remove('hidden');
+        requestAnimationFrame(() => mobileMenu.classList.remove('opacity-0'));
+      } else {
+        mobileMenu.classList.add('opacity-0');
+        setTimeout(() => mobileMenu.classList.add('hidden'), 300);
+      }
+    }
+
+    menuBtn?.addEventListener('click', toggleMenu);
+    closeBtn?.addEventListener('click', toggleMenu);
+    mobileMenu?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
 
 </body>
 </html>
