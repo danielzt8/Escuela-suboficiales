@@ -70,51 +70,39 @@
           :class="scrolled ? 'glass-nav shadow-lg py-2' : 'bg-transparent py-4'">
     <div class="container mx-auto px-6 flex justify-between items-center">
       <a href="#inicio" class="flex items-center gap-4 group">
-        <div class="w-14 h-14 rounded-full flex items-center justify-center">
-          <img src="images/logo transparente.png" alt="" srcset="" class=" rounded-full ">
+        <div class="w-12 h-12 bg-gold-500/20 rounded-full flex items-center justify-center border border-gold-500/50">
+          <ion-icon name="shield-outline" class="text-2xl text-gold-500"></ion-icon>
         </div>
         <div>
           <h1 class="text-white font-serif font-bold text-xl leading-none tracking-wide">ESOFNARD</h1>
           <p class="text-gold-500 text-[10px] uppercase tracking-[0.2em] font-medium">Armada de República Dominicana</p>
         </div>
       </a>
-
-      <nav class="hidden md:flex items-center gap-8">
+      <nav class="hidden md:flex items-center gap-6 lg:gap-8">
         <a href="#inicio" class="text-white text-sm font-medium hover:text-gold-500 uppercase tracking-widest transition-colors">Inicio</a>
         <a href="#quienes-somos" class="text-white text-sm font-medium hover:text-gold-500 uppercase tracking-widest transition-colors">Nosotros</a>
         <a href="#suboficial" class="text-white text-sm font-medium hover:text-gold-500 uppercase tracking-widest transition-colors">El Suboficial</a>
         <a href="#requisitos" class="text-white text-sm font-medium hover:text-gold-500 uppercase tracking-widest transition-colors">Requisitos</a>
         <a href="#beneficios" class="text-white text-sm font-medium hover:text-gold-500 uppercase tracking-widest transition-colors">Beneficios</a>
         <a href="articulos.html" class="text-white text-sm font-medium hover:text-gold-500 uppercase tracking-widest transition-colors">Noticias</a>
-        <a href="#requisitos" class="px-6 py-2 bg-gradient-to-r from-gold-600 to-gold-400 text-navy-950 text-xs font-bold uppercase tracking-wider rounded-sm shadow-md hover:brightness-110 transition-all">Postúlate</a>
+        
+        <!-- Enlace Directo a la Armada de República Dominicana -->
+        <a href="https://armada.mil.do/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 border border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-navy-950 text-xs font-bold uppercase tracking-wider rounded-sm transition-all flex items-center gap-1.5 shadow-sm">
+          <span>Armada RD</span>
+          <ion-icon name="open-outline" class="text-sm"></ion-icon>
+        </a>
+
+        <a href="#requisitos" class="px-5 py-2 bg-gradient-to-r from-gold-600 to-gold-400 text-navy-950 text-xs font-bold uppercase tracking-wider rounded-sm shadow-md hover:brightness-110 transition-all">Postúlate</a>
       </nav>
-
-      <button id="mobile-menu-button" class="md:hidden text-white text-3xl cursor-pointer hover:text-gold-500 transition-colors" aria-label="Abrir menú">
-        <ion-icon name="menu-outline"></ion-icon>
-      </button>
-    </div>
-
-    <div id="mobile-menu" class="fixed inset-0 bg-navy-950/95 backdrop-blur-xl z-50 hidden flex flex-col items-center justify-center space-y-8 transition-opacity duration-300">
-      <button id="close-menu" class="absolute top-8 right-8 text-white text-4xl hover:text-gold-500 transition-colors" aria-label="Cerrar menú">
-        <ion-icon name="close-outline"></ion-icon>
-      </button>
-      <a href="#inicio" class="text-2xl text-white font-serif hover:text-gold-500 transition-colors">Inicio</a>
-      <a href="#quienes-somos" class="text-2xl text-white font-serif hover:text-gold-500 transition-colors">Nosotros</a>
-      <a href="#suboficial" class="text-2xl text-white font-serif hover:text-gold-500 transition-colors">El Suboficial</a>
-      <a href="#requisitos" class="text-2xl text-white font-serif hover:text-gold-500 transition-colors">Requisitos</a>
-      <a href="#beneficios" class="text-2xl text-white font-serif hover:text-gold-500 transition-colors">Beneficios</a>
-      <a href="articulos.html" class="text-2xl text-gold-500 font-serif">Noticias</a>
     </div>
   </header>
 
   <!-- Hero Section with Slideshow -->
   <section id="inicio" class="relative h-screen flex items-center justify-center overflow-hidden">
     <div x-data="{ active: 0, slides: [
-          'images/escuela.jpeg',
-          'images/escuela01.jpeg',
-          'images/escuela02.jpeg',
-          'images/escuela03.jpeg',
-          'images/escuela04.jpeg'
+          'https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=2070&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=2070&auto=format&fit=crop'
         ] }" 
          x-init="setInterval(() => active = (active + 1) % slides.length, 5000)"
          class="absolute inset-0 z-0">
@@ -146,8 +134,9 @@
         <a href="#requisitos" class="px-8 py-4 bg-gold-500 hover:bg-gold-400 text-navy-950 font-bold uppercase tracking-widest text-xs transition-all transform hover:-translate-y-1 shadow-lg shadow-gold-500/25">
           Ver Requisitos
         </a>
-        <a href="#quienes-somos" class="px-8 py-4 border border-white/30 hover:bg-white/10 text-white font-bold uppercase tracking-widest text-xs transition-all backdrop-blur-sm">
-          Conocer Escuela
+        <a href="https://armada.mil.do/" target="_blank" rel="noopener noreferrer" class="px-8 py-4 border border-white/30 hover:bg-white/10 text-white font-bold uppercase tracking-widest text-xs transition-all backdrop-blur-sm inline-flex items-center justify-center gap-2">
+          <span>Sitio Oficial Armada RD</span>
+          <ion-icon name="open-outline"></ion-icon>
         </a>
       </div>
     </div>
@@ -186,7 +175,7 @@
       <!-- History Card with Background Image -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center bg-navy-900 text-white p-8 md:p-12 rounded-sm shadow-2xl relative overflow-hidden my-12">
         <div class="absolute inset-0 opacity-25">
-          <img src="images/escuela05.jpeg" class="w-full h-full object-cover">
+          <img src="https://images.unsplash.com/photo-1551818255-e6e10975bc17?q=80&w=2073&auto=format&fit=crop" class="w-full h-full object-cover">
         </div>
         <div class="lg:col-span-7 relative z-10 space-y-6">
           <span class="text-gold-400 text-xs font-bold uppercase tracking-widest block">Nuestra Trayectoria</span>
@@ -210,7 +199,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
         <div class="group relative bg-navy-900 rounded-sm overflow-hidden shadow-xl p-10 text-white min-h-[280px] flex flex-col justify-between">
           <div class="absolute inset-0 opacity-25 group-hover:opacity-35 transition-opacity">
-            <img src="images/escuela06.jpeg" class="w-full h-full object-cover">
+            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover">
           </div>
           <div class="relative z-10">
             <div class="w-12 h-12 bg-gold-500/20 rounded-sm flex items-center justify-center mb-6">
@@ -223,7 +212,7 @@
 
         <div class="group relative bg-navy-900 rounded-sm overflow-hidden shadow-xl p-10 text-white min-h-[280px] flex flex-col justify-between">
           <div class="absolute inset-0 opacity-25 group-hover:opacity-35 transition-opacity">
-            <img src="images/escuela07.jpeg" class="w-full h-full object-cover">
+            <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover">
           </div>
           <div class="relative z-10">
             <div class="w-12 h-12 bg-gold-500/20 rounded-sm flex items-center justify-center mb-6">
@@ -421,34 +410,14 @@
       </p>
     </div>
 
-    <div class="container mx-auto px-6 border-t border-navy-900 pt-8 flex justify-between items-center text-xs text-gray-500">
+    <div class="container mx-auto px-6 border-t border-navy-900 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 gap-4">
       <p>&copy; 2026 Escuela de Suboficiales Navales (ESOFNARD) - ARD. Todos los derechos reservados.</p>
+      <a href="https://armada.mil.do/" target="_blank" rel="noopener noreferrer" class="text-gold-500 hover:underline flex items-center gap-1 font-semibold">
+        <span>Sitio Oficial: Armada de República Dominicana</span>
+        <ion-icon name="open-outline"></ion-icon>
+      </a>
     </div>
   </footer>
-
-  <script>
-    const menuBtn = document.getElementById('mobile-menu-button');
-    const closeBtn = document.getElementById('close-menu');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    function toggleMenu() {
-      if (mobileMenu.classList.contains('hidden')) {
-        mobileMenu.classList.remove('hidden');
-        requestAnimationFrame(() => mobileMenu.classList.remove('opacity-0'));
-      } else {
-        mobileMenu.classList.add('opacity-0');
-        setTimeout(() => mobileMenu.classList.add('hidden'), 300);
-      }
-    }
-
-    menuBtn?.addEventListener('click', toggleMenu);
-    closeBtn?.addEventListener('click', toggleMenu);
-    mobileMenu?.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-      });
-    });
-  </script>
 
 </body>
 </html>
