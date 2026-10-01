@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Inscripción | ESOFNARD - ARD</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['"Inter"', 'sans-serif'],
+          },
+          colors: {
+            navy: {
+              50: '#f0f4f9',
+              100: '#dbe5f2',
+              500: '#2e5a9e',
+              800: '#1e4079',
+              900: '#0a192f',
+              950: '#020c1b',
+            },
+            gold: {
+              400: '#fbbf24',
+              500: '#d4af37',
+              600: '#b8860b',
+              700: '#926a09',
+            },
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0a192f; }
+    ::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 4px; }
+    .glass-nav { background: rgba(10, 25, 47, 0.95); backdrop-filter: blur(10px); }
+  </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800 font-sans selection:bg-gold-500 selection:text-white flex flex-col min-h-screen">
+
+  <!-- Header -->
+  <header class="fixed w-full top-0 z-50 transition-all duration-300 glass-nav shadow-lg py-3">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-4 group">
+        <div class="w-10 h-10 bg-gold-500/20 rounded-full flex items-center justify-center border border-gold-500/50">
+          <ion-icon name="shield-outline" class="text-xl text-gold-500"></ion-icon>
+        </div>
+        <div>
+          <h1 class="text-white font-serif font-bold text-lg leading-none tracking-wide">ESOFNARD</h1>
+          <p class="text-gold-500 text-[10px] uppercase tracking-[0.2em] font-medium">Armada de República Dominicana</p>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="index.html" class="text-white text-xs font-medium hover:text-gold-500 uppercase tracking-widest transition-colors">Inicio</a>
+        <a href="articulos.html" class="text-white text-xs font-medium hover:text-gold-500 uppercase tracking-widest transition-colors">Noticias</a>
+        <a href="formulario.html" aria-current="page" class="text-gold-500 text-xs font-medium uppercase tracking-widest">Formulario</a>
+      </nav>
+      <button id="mobile-menu-button" class="md:hidden text-white text-3xl" aria-label="Abrir menú">
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-navy-950/95 backdrop-blur-xl z-50 hidden flex flex-col items-center justify-center space-y-8 transition-opacity duration-300">
+      <button id="close-menu" class="absolute top-8 right-8 text-white text-4xl hover:text-gold-500" aria-label="Cerrar menú">
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+      <a href="index.html" class="text-2xl text-white font-serif hover:text-gold-500">Inicio</a>
+      <a href="articulos.html" class="text-2xl text-white font-serif hover:text-gold-500">Noticias</a>
+      <a href="formulario.html" aria-current="page" class="text-2xl text-gold-500 font-serif">Formulario</a>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="relative pt-32 pb-12 bg-navy-900 border-b-4 border-gold-500 overflow-hidden text-center">
+    <div class="absolute inset-0 z-0 opacity-20 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=2070&auto=format&fit=crop');"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-navy-950/90 to-navy-900/50"></div>
+    <div class="container mx-auto px-6 relative z-10 max-w-4xl">
+      <h1 class="text-3xl md:text-4xl font-serif font-bold text-white mb-3">Formulario de inscripción para Alistados</h1>
+      <p class="text-gold-400 text-sm uppercase tracking-widest font-semibold">Para optar por la carrera de Suboficial</p>
+    </div>
+  </section>
+
+  <!-- Main Form Container -->
+  <main class="flex-grow container mx-auto px-4 sm:px-6 py-12 max-w-3xl">
+    
+    <!-- Instructions Card -->
+    <div class="bg-white border-t-4 border-navy-900 shadow-md rounded-sm p-6 sm:p-8 mb-8 space-y-4">
+      <h2 class="text-navy-900 font-serif font-bold text-lg flex items-center gap-2">
+        <ion-icon name="information-circle-outline" class="text-gold-600 text-xl"></ion-icon> Instrucciones Importantes
+      </h2>
+      <ul class="text-xs sm:text-sm text-gray-700 space-y-2 list-disc pl-5">
+        <li>Todo alistado que desee optar por la carrera de Suboficial deberá solicitar, a través de la vía correspondiente, su <strong>Historial de Vida Militar</strong> y cargarlo en formato PDF en este formulario.</li>
+        <li>Una vez completado el formulario, el interesado pasará a formar parte de la lista de posibles candidatos para futuras promociones del Curso Básico para Suboficiales.</li>
+        <li>El Curso Básico para Suboficiales se desarrolla en la Escuela de Suboficiales Navales, ubicada en la Base de Infantería de Marina Vicealmirante Manuel Montes Arache, Boca Chica.</li>
+        <li>Este formulario constituye un avance administrativo destinado a agilizar y adelantar los procesos de selección y organización de futuras promociones.</li>
+        <li>El hecho de completar este formulario no constituye una admisión automática al curso.</li>
+      </ul>
+    </div>
+
+    <!-- Form -->
+    <form action="#" method="POST" enctype="multipart/form-data" class="space-y-6">
+
+      <!-- Question 1 -->
+      <div class="bg-white p-6 sm:p-8 rounded-sm shadow-md border-l-4 border-gold-500 space-y-4">
+        <label class="block text-navy-900 font-bold text-sm sm:text-base">
+          ¿Es usted miembro activo de la Armada de la República Dominicana? <span class="text-red-600">*</span>
+        </label>
+        <div class="space-y-2">
+          <label class="flex items-center gap-3 cursor-pointer text-sm">
+            <input type="radio" name="miembro_activo" value="Si" required class="text-navy-900 focus:ring-gold-500 h-4 w-4"> Sí
+          </label>
+          <label class="flex items-center gap-3 cursor-pointer text-sm">
+            <input type="radio" name="miembro_activo" value="No" class="text-navy-900 focus:ring-gold-500 h-4 w-4"> No
+          </label>
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="bg-white p-6 sm:p-8 rounded-sm shadow-md border-l-4 border-gold-500 space-y-4">
+        <label class="block text-navy-900 font-bold text-sm sm:text-base">
+          ¿Tiene usted un tiempo mínimo de 15 años en la Armada Dominicana? <span class="text-red-600">*</span>
+        </label>
+        <div class="space-y-2">
+          <label class="flex items-center gap-3 cursor-pointer text-sm">
+            <input type="radio" name="tiempo_armada" value="15_o_mas" required class="text-navy-900 focus:ring-gold-500 h-4 w-4"> Sí, tengo 15 años o más.
+          </label>
+          <label class="flex items-center gap-3 cursor-pointer text-sm">
+            <input type="radio" name="tiempo_armada" value="menos_15" class="text-navy-900 focus:ring-gold-500 h-4 w-4"> Tengo menos de 15 años.
+          </label>
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="bg-white p-6 sm:p-8 rounded-sm shadow-md border-l-4 border-gold-500 space-y-4">
+        <label class="block text-navy-900 font-bold text-sm sm:text-base">
+          ¿Es usted Sargento de la Armada de la República Dominicana? <span class="text-red-600">*</span>
+        </label>
+        <div class="space-y-2">
+          <label class="flex items-center gap-3 cursor-pointer text-sm">
+            <input type="radio" name="es_sargento" value="Si" required class="text-navy-900 focus:ring-gold-500 h-4 w-4"> Sí, soy Sargento.
+          </label>
+          <label class="flex items-center gap-3 cursor-pointer text-sm">
+            <input type="radio" name="es_sargento" value="No" class="text-navy-900 focus:ring-gold-500 h-4 w-4"> No, no soy Sargento.
+          </label>
+        </div>
+      </div>
+
+      <!-- Upload 1 -->
+      <div class="bg-white p-6 sm:p-8 rounded-sm shadow-md border-l-4 border-gold-500 space-y-3">
+        <label class="block text-navy-900 font-bold text-sm sm:text-base">
+          Cédula de identidad y carnet actualizado de la Armada. <span class="text-red-600">*</span>
+        </label>
+        <p class="text-xs text-gray-500">Sube 1 archivo compatible: PDF o imagen. Tamaño máximo: 10 MB.</p>
+        <input type="file" name="cedula_carnet" accept=".pdf,image/*" required class="block w-full text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-sm file:border-0 file:text-xs file:font-semibold file:bg-navy-900 file:text-white hover:file:bg-navy-800 cursor-pointer">
+      </div>
+
+      <!-- Upload 2 -->
+      <div class="bg-white p-6 sm:p-8 rounded-sm shadow-md border-l-4 border-gold-500 space-y-3">
+        <label class="block text-navy-900 font-bold text-sm sm:text-base">
+          Historial de vida militar (Reciente) <span class="text-red-600">*</span>
+        </label>
+        <p class="text-xs text-gray-500">Sube 1 archivo compatible: PDF. Tamaño máximo: 10 MB.</p>
+        <input type="file" name="historial_militar" accept=".pdf" required class="block w-full text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-sm file:border-0 file:text-xs file:font-semibold file:bg-navy-900 file:text-white hover:file:bg-navy-800 cursor-pointer">
+      </div>
+
+      <!-- Question 4 -->
+      <div class="bg-white p-6 sm:p-8 rounded-sm shadow-md border-l-4 border-gold-500 space-y-4">
+        <label class="block text-navy-900 font-bold text-sm sm:text-base">
+          ¿Es usted bachiller? <span class="text-red-600">*</span>
+        </label>
+        <div class="space-y-2">
+          <label class="flex items-center gap-3 cursor-pointer text-sm">
+            <input type="radio" name="es_bachiller" value="Si" required class="text-navy-900 focus:ring-gold-500 h-4 w-4"> Sí, soy bachiller.
+          </label>
+          <label class="flex items-center gap-3 cursor-pointer text-sm">
+            <input type="radio" name="es_bachiller" value="No" class="text-navy-900 focus:ring-gold-500 h-4 w-4"> Aún no he terminado el bachillerato.
+          </label>
+        </div>
+      </div>
+
+      <!-- Upload 3 -->
+      <div class="bg-white p-6 sm:p-8 rounded-sm shadow-md border-l-4 border-gold-500 space-y-3">
+        <label class="block text-navy-900 font-bold text-sm sm:text-base">
+          Certificado de Bachiller (MINERD) <span class="text-red-600">*</span>
+        </label>
+        <p class="text-xs text-gray-500">Sube 1 archivo compatible: PDF. Tamaño máximo: 10 MB.</p>
+        <input type="file" name="certificado_minerd" accept=".pdf" required class="block w-full text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-sm file:border-0 file:text-xs file:font-semibold file:bg-navy-900 file:text-white hover:file:bg-navy-800 cursor-pointer">
+      </div>
+
+      <!-- Upload 4 -->
+      <div class="bg-white p-6 sm:p-8 rounded-sm shadow-md border-l-4 border-gold-500 space-y-3">
+        <label class="block text-navy-900 font-bold text-sm sm:text-base">
+          Carta de recomendación de su Comandante inmediato actual. <span class="text-red-600">*</span>
+        </label>
+        <p class="text-xs text-gray-500">Sube 1 archivo compatible: PDF. Tamaño máximo: 10 MB.</p>
+        <input type="file" name="carta_recomendacion" accept=".pdf" required class="block w-full text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-sm file:border-0 file:text-xs file:font-semibold file:bg-navy-900 file:text-white hover:file:bg-navy-800 cursor-pointer">
+      </div>
+
+      <!-- Upload 5 -->
+      <div class="bg-white p-6 sm:p-8 rounded-sm shadow-md border-l-4 border-gold-500 space-y-3">
+        <label class="block text-navy-900 font-bold text-sm sm:text-base">
+          ¿Goza usted de una buena condición de salud física y mental? <span class="text-red-600">*</span>
+        </label>
+        <p class="text-xs text-gray-600 italic">Certificado médico expedido por la Dirección del Cuerpo Médico y Sanidad Naval de menos de 6 meses.</p>
+        <p class="text-xs text-gray-500">Sube 1 archivo compatible: PDF. Tamaño máximo: 10 MB.</p>
+        <input type="file" name="certificado_medico" accept=".pdf" required class="block w-full text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-sm file:border-0 file:text-xs file:font-semibold file:bg-navy-900 file:text-white hover:file:bg-navy-800 cursor-pointer">
+      </div>
+
+      <!-- Upload 6 -->
+      <div class="bg-white p-6 sm:p-8 rounded-sm shadow-md border-l-4 border-gold-500 space-y-3">
+        <label class="block text-navy-900 font-bold text-sm sm:text-base">
+          ¿Usted realizó el curso básico según su especialidad? (Subir certificado del Curso Básico para CO, IM, MD, IF, OF, ETC) <span class="text-red-600">*</span>
+        </label>
+        <p class="text-xs text-gray-500">Sube 1 archivo compatible: PDF. Tamaño máximo: 10 MB.</p>
+        <input type="file" name="curso_especialidad" accept=".pdf" required class="block w-full text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-sm file:border-0 file:text-xs file:font-semibold file:bg-navy-900 file:text-white hover:file:bg-navy-800 cursor-pointer">
+      </div>
+
+      <!-- Form Actions -->
+      <div class="flex items-center justify-between pt-4">
+        <button type="submit" class="px-8 py-3 bg-gradient-to-r from-gold-600 to-gold-400 text-navy-950 font-bold text-xs uppercase tracking-widest rounded-sm shadow-lg hover:brightness-110 transition-all">
+          Enviar Formulario
+        </button>
+        <button type="reset" class="text-gray-500 hover:text-red-600 text-xs font-semibold uppercase tracking-wider transition-colors">
+          Borrar formulario
+        </button>
+      </div>
+
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-navy-950 text-white py-8 border-t border-navy-900 text-center text-xs text-gray-500 mt-12">
+    <p>&copy; 2026 Escuela de Suboficiales Navales (ESOFNARD) - ARD. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-button');
+    const closeBtn = document.getElementById('close-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    function toggleMenu() {
+      mobileMenu.classList.toggle('hidden');
+    }
+
+    menuBtn?.addEventListener('click', toggleMenu);
+    closeBtn?.addEventListener('click', toggleMenu);
+    mobileMenu?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+  </script>
+
+</body>
+</html>
